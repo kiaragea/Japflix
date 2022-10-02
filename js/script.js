@@ -58,18 +58,18 @@ document.addEventListener('DOMContentLoaded', async function () {
         showPeliculas();
         for (const pelicula of peliculasFiltradas) {
             listado.innerHTML += `
-            <div onclick='cajita(${pelicula.id})' data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" class="list-group-item">
+            <div onclick='cajita(${pelicula.id})' data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" class="list-group-item mb-3 rounded col-9 container align-items: center shadow">
                 <div>
-                <h3>${pelicula.title}</h3>
+                <h3 class="text-dark">${pelicula.title}</h3>
                 </div>
                 <div>
-                <p>${pelicula.tagline}
+                <p class="text-muted">${pelicula.tagline}
                 </p>
                 </div>
                 <div>
                     
                 </div>
-                <div>
+                <div class="text-dark">
                     ${crearEstrellas(pelicula.vote_average/2)}
                 </div>
             </div>`
@@ -86,7 +86,7 @@ function cajita(id) {
     })
     document.querySelector('#cajitaTitulo').innerHTML = pelicula.title
     document.querySelector('#cajitaDescripcion').innerHTML = pelicula.overview
-    document.querySelector('#cajitaGenero').innerHTML = `<hr> Generos: ${pelicula.genres[0].name} - ${pelicula.genres[1].name} - ${pelicula.genres[2].name}`
+    document.querySelector('#cajitaGenero').innerHTML = `<hr> Generos: ${pelicula.genres[0].name} - ${pelicula.genres[1].name} - ${pelicula.genres[2].name} - `
     
         
     document.querySelector(`#cajitaMore`).innerHTML = `<br>
